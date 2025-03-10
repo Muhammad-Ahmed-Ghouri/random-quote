@@ -53,3 +53,11 @@ function randomQuote() {
   quoteAuthor.textContent = `Author: ${quoteArray[randomInt].author}`;
   quote.textContent = quoteArray[randomInt].quote;
 }
+
+const quotesList = document.getElementById("quotes-list");
+
+quoteArray.map((quote) => {
+  const listCreate = document.createElement("li");
+  listCreate.innerHTML = `<p style="color: yellow;margin-bottom:10px;">> ${quote.author}</p> ${quote.quote}`;
+  quotesList.appendChild(listCreate);
+});
